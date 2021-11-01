@@ -15,7 +15,7 @@ namespace BankingWebApi.Models
         public decimal Balance { get; set; } = 0;
         [StringLength(100), Required]
         public string Description { get; set; }
-
+        public DateTime Date { get; set; }
 
         public static bool Deposit(Account acct, decimal amount)
         {
@@ -23,7 +23,7 @@ namespace BankingWebApi.Models
             {
                 throw new AmmountGreaterThanZeroException();
             }
-            acct.Balance = acct.Balance + amount;
+            acct.Balance += amount;
             return true;
         }
         public static bool Withdraw(Account acct, decimal amount)
@@ -36,7 +36,7 @@ namespace BankingWebApi.Models
             {
                 throw new InsufficiantFundsException(acct.Balance, amount);   //This.Balance takes Balance and puts it in CurrentBalance property in InsufficiantFundsException
             }
-            acct.Balance = acct.Balance - amount;
+            acct.Balance -= amount;
             return true;
         }
         public bool Transfer(Account from, decimal amount, Account ToAccount)   //Takes Account class and puts in ToAccount to access inside of Transfer method
