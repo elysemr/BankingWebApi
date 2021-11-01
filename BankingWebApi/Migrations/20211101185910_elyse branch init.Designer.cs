@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankingWebApi.Migrations
 {
     [DbContext(typeof(BankDbContext))]
-    [Migration("20211101185412_elyse branch init")]
+    [Migration("20211101185910_elyse branch init")]
     partial class elysebranchinit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,16 +84,18 @@ namespace BankingWebApi.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(11,2)");
 
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("InterestRate")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(11,2)");
 
                     b.HasKey("Id");
 
