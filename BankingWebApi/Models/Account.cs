@@ -17,7 +17,7 @@ namespace BankingWebApi.Models
         public string Description { get; set; }
 
 
-        public bool Deposit(decimal amount)
+        public static bool Deposit(Account acct, decimal amount)
         {
             if (amount <= 0)
             {
