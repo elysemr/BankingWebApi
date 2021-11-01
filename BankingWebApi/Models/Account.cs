@@ -10,7 +10,7 @@ namespace BankingWebApi.Models
     public class Account
     {
         public int Id { get; set; }
-        [Column(TypeName = "decimal(9,2)")]
+        [Column(TypeName = "decimal(11,2)")]
         public decimal Balance { get; set; } = 0;
         public string Description { get; set; }
         public DateTime Date { get; set; }
