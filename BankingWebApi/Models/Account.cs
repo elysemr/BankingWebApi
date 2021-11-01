@@ -15,7 +15,6 @@ namespace BankingWebApi.Models
         public decimal Balance { get; set; } = 0;
         [StringLength(100), Required]
         public string Description { get; set; }
-        public DateTime Date { get; set; }
 
 
         public bool Deposit(decimal amount)
