@@ -1,6 +1,7 @@
 ﻿using BankingWebApi.Exceptions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace BankingWebApi.Models
     public class Account
     {
         public int Id { get; set; }
+        [Column(TypeName = "decimal(9,2)")]
         public decimal Balance { get; set; } = 0;
         public string Description { get; set; }
         public DateTime Date { get; set; }
