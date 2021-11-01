@@ -10,6 +10,7 @@ namespace BankingWebApi.Models
     public class BankDbContext : DbContext
     {
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<CreditCard> CreditCards { get; set; }
 
 
         public BankDbContext(DbContextOptions<BankDbContext> options) : base(options) { }
