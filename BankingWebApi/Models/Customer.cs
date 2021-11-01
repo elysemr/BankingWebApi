@@ -29,6 +29,7 @@ namespace BankingWebApi.Models
         [StringLength(255)]
         public string Email { get; set; }
 
+        public virtual Savings savings { get; set; }
 
 
         public Customer () { }
