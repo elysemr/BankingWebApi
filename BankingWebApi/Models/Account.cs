@@ -17,7 +17,6 @@ namespace BankingWebApi.Models
         public string Description { get; set; }
         public DateTime Date { get; set; }
 
-        public Account () {}
 
         public bool Deposit(decimal amount)
         {
