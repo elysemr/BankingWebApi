@@ -10,12 +10,15 @@ namespace BankingWebApi.Models
     {
         [Column(TypeName = "decimal(9,2)")]
         public decimal Intrest { get; set; } = 02.62m;
+        [Column(TypeName = "decimal(9,2)")]
         public decimal intrestowed { get; set; }
+        public int CustomerId { get; set; }
+        public virtual Customer customer { get; set; }
         
 
         public CreditCard(int months)
         {
-            intrestowed  = Balance * (Intrest / 12) * months;
+            intrestowed = Balance * (Intrest / 12) * months;
         }
         public CreditCard() { }
         
