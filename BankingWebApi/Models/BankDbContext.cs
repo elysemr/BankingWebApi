@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BankingWebApi.Models;
 
 namespace BankingWebApi.Models
 {
@@ -15,5 +16,7 @@ namespace BankingWebApi.Models
         public BankDbContext(DbContextOptions<BankDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder) { }
+
+        public DbSet<BankingWebApi.Models.Savings> Savings { get; set; }
     }
 }
